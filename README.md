@@ -1,69 +1,53 @@
-# React + TypeScript + Vite
+# Moral Mirror
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🤔💡 I've always been fascinated by philosophical thought experiments, especially the trolley problem, which I first encountered in the show [The Good Place](https://www.imdb.com/title/tt4955642/)! It led to a long talk with my brother and inspired me to create something interactive to explore moral decision-making.
 
-Currently, two official plugins are available:
+**Moral Mirror** is an interactive experiment exploring moral decision-making, inspired by the classic trolley problem. Enter your personal credo and see how an AI predicts your choices in ethical dilemmas. The app is designed to help you reflect on the gap between your stated values and your actions. 🪞
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+😂 As Chidi Anagonye famously said, _"That's why everyone hates moral philosophy professors."_
 
-## Expanding the ESLint configuration
+## What is the Trolley Problem?
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+A trolley is stopped at a fork in the tracks, with one person tied to each path. You must choose which track the trolley will go down, knowing that your choice will result in the death of one person. The dilemma is about making an active decision between two tragic outcomes.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Character Generation:** Randomly generates morally interesting characters for each scenario.
+- **Credo Input:** Enter your own moral credo, which guides the AI's predictions.
+- **AI Prediction:** See what the AI thinks you would do, based on your credo and the scenario.
+- **Backstory Modal:** View detailed backstories for each character.
+- **Shareable Scenarios:** Share specific scenarios with others using a unique seed.
+- **Educational Purpose:** Designed to help users explore ethical decision-making.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Usage
+
+1. **Enter Your Credo:** Start by entering your personal moral credo.
+2. **Generate Characters:** Click "Generate New Characters" to create a new scenario.
+3. **Make Your Choice:** Select which character you would save.
+4. **Ask the AI:** Click "What AI thinks you would do" to see the AI's prediction.
+5. **Review and Share:** View revised credos, character backstories, and share scenarios.
+
+## Development
+
+This project uses [React](https://react.dev/) and [React Bootstrap](https://react-bootstrap.github.io/) for the UI. AI predictions are powered by a backend function using Groq's Llama-3 model.
+
+💻🚀 Built with TypeScript, Vite, Bootstrap, Groq, and Netlify.  
+Uses AI models: `gemma2-9b-it`, `llama-3.3-70b-versatile`, and `llama-3.1-8b-instant`.
+
+To run locally:
+
+```sh
+yarn install
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Credits
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Created by Attila Farago.  
+Inspired by philosophical discussions and the TV show [The Good Place](https://www.imdb.com/title/tt4955642/).
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+More reflections on the trolley problem are available on [Substack](https://troypancake.substack.com/p/reflections-on-the-trolley-problem).
+
+---
+
+For educational purposes
