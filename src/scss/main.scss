@@ -1,0 +1,112 @@
+$color-mode-type: "dark";
+$enable-dark-mode: true;
+$dark: rgb(11, 30, 49);
+$body-bg: rgb(11, 30, 49);
+$body-bg-dark: rgb(11, 30, 49);
+$modal-bg: rgb(11, 30, 49);
+$modal-bg-dark: rgb(11, 30, 49);
+@import "bootstrap/scss/bootstrap";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "../assets/fonts/brandon-grotesque.scss";
+// @import url("https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap");
+
+html {
+  background-color: $body-bg !important;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  --bs-bg-opacity: 1;
+  // --bs-body-bg: rgb(11, 30, 49);
+  // --bs-dark-rgb: 11, 30, 49;
+  --bs-body-color: #dee2e6;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  font-family: "Noto Sans", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-title,
+.modal-title {
+  --bs-font-sans-serif: "Brandon Grotesque", Arial, sans-serif !important;
+  font-family: "Brandon Grotesque", Arial, sans-serif !important;
+  font-weight: bolder !important;
+}
+
+:root {
+  line-height: 1.5;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+  max-height: 100%;
+  width: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}

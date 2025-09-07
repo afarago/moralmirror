@@ -1,0 +1,19 @@
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[build]
+  command = "yarn build"
+  publish = "dist"
+
+[dev]
+  framework = "vite"
+  command = "yarn dev"
+  port = 5193
+  [dev.env]
+    URL = "http://localhost:5193"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

@@ -1,0 +1,178 @@
+$dark: rgb(11, 30, 49);
+$card-color: rgb(65, 95, 106);
+$card-color-outline: rgba(96, 199, 199, 0.5);
+$button-color: $dark;
+
+.app {
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+  max-height: 100%;
+}
+
+.trolley-visualization {
+  .train-track {
+    path:first-child {
+      stroke: hsl(214, 23%, 39%);
+      stroke-width: 40;
+    }
+    &.unfocused path:first-child {
+      stroke: hsl(214, 23%, 19%);
+    }
+
+    path:last-child {
+      stroke: $dark;
+      stroke-width: 24;
+      stroke-dasharray: 16 6;
+      stroke-dashoffset: 8;
+    }
+  }
+}
+
+.modal-header,
+.modal-footer {
+  background-color: #77777733;
+}
+
+.cards-column {
+  &:has(.card.character-card.focused) {
+    .card.character-card:not(.focused) {
+      opacity: 0.5;
+    }
+  }
+
+  .card.character-card {
+    text-align: center;
+    outline: $card-color-outline solid 1px;
+    --bs-card-bg: #{$card-color} !important;
+
+    .card-body {
+      min-height: 5lh;
+    }
+
+    .card-title {
+      font-weight: bolder;
+      font-size: 1.5em;
+      text-decoration: underline;
+    }
+
+    &.state-survivor {
+      box-shadow: inset 0px 0px 3px 8px rgba(89, 198, 64, 0.8) !important;
+    }
+    &.state-dead {
+      // outline: 6px solid rgba(88, 60, 35, 0.8) !important;
+      // box-shadow: 3px 3px 0 6px white !important;
+      box-shadow: inset 0px 0px 3px 8px rgba(20, 20, 20, 0.8) !important;
+    }
+    &.selected {
+      outline: 3px solid white !important;
+    }
+    &.unfocused {
+      opacity: 0.5;
+    }
+
+    .save-button-container {
+      position: absolute;
+      z-index: 1;
+      left: -2em;
+      margin-top: 0.1em;
+
+      button {
+        --bs-btn-color: white;
+        --bs-btn-border-color: #{$card-color-outline} !important;
+      }
+      .btn-outline-primary {
+        --bs-btn-bg: #{$button-color} !important;
+        --bs-btn-disabled-bg: #{$button-color} !important;
+      }
+      // .btn-primary {
+      //   --bs-btn-bg: #{$card-color} !important;
+      // }
+    }
+
+    .info-icon {
+      top: 0.5em;
+    }
+    .decision-info {
+      position: absolute;
+      color: #ffffff;
+      background: rgb(139 177 114 / 90%);
+      bottom: 0.2em;
+      right: -2em;
+      border-radius: 0.5em;
+      box-shadow: 2px 2px 9px 6px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        opacity: 0.3;
+      }
+    }
+
+    .info-icon {
+      position: absolute;
+      color: #b5b5b5;
+    }
+    .state-icon {
+      left: 0.5em;
+      .dead {
+        color: #000000;
+      }
+      .survivor {
+        color: #59c640;
+      }
+    }
+    .info-icon {
+      right: 0.5em;
+    }
+  }
+}
+
+.button-row {
+  button {
+    padding-block: 0.75rem;
+    padding-inline: 1.5rem;
+  }
+}
+
+footer {
+  width: 100%;
+  --bs-border-color: #555;
+
+  .small {
+    font-size: 0.7em;
+  }
+}
+
+.quote {
+  font-style: italic;
+  color: #555;
+  margin: 1em 0;
+  // text-indent: 3em;
+  text-align: left;
+  padding-left: 2em;
+
+  &::first-letter {
+    font-size: 300%;
+    float: left;
+    line-height: 1;
+    text-indent: 0px;
+  }
+
+  div {
+    // margin-top: -0.5em;
+    margin-right: 1.5em;
+    text-align: right;
+  }
+}
+
+.about-modal {
+  .about-pic {
+    width: 50%;
+    max-width: 300px;
+  }
+  @media (max-width: 991.98px) {
+    .about-pic {
+      width: 100% !important;
+      max-width: unset;
+    }
+  }
+}
